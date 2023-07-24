@@ -1,0 +1,132 @@
+┌──(naumov㉿kaliLinux)-[~]
+└─$ sudo su
+[sudo] пароль для naumov: 
+┌──(root㉿kaliLinux)-[/home/naumov]
+└─# apt update; apt upgrade -y; echo "обновление завершено"
+Сущ:1 http://mirror.truenetwork.ru/kali kali-rolling InRelease
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Все пакеты имеют последние версии.
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Расчёт обновлений… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  libblockdev-crypto2 libblockdev-fs2 libblockdev-loop2 libblockdev-part-err2 libblockdev-part2 libblockdev-swap2 libblockdev-utils2 libblockdev2 python3-cryptography37
+Для их удаления используйте «sudo apt autoremove».
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+обновление завершено
+                                                                                                                                                                                                                                                                                                                       
+┌──(root㉿kaliLinux)-[/home/naumov]
+└─# exit
+
+┌──(naumov㉿kaliLinux)-[~]
+└─$ cat > Pets    
+dog,Nala,1
+dog,Simba,2
+dog,Helty,1
+cat,Merss,7 
+cat,Busya,6
+hamster,Sura,1 
+^C                                                                                                                                                                                                                                                                                                                     
+┌──(naumov㉿kaliLinux)-[~]
+└─$ cat Pets  
+dog,Nala,1
+dog,Simba,2
+dog,Helty,1
+cat,Merss,7
+cat,Busya,6
+hamster,Sura,1
+
+┌──(naumov㉿kaliLinux)-[~]
+└─$ cat > packAnimals 
+horse,Jessica,5
+horse,Pigas,100
+camel,Gosha,9
+donkey,Oliver,1
+donkey,Asi,4
+^C                                                                                                                                                                                                                                                                                                                 
+┌──(naumov㉿kaliLinux)-[~]
+└─$ cat  packAnimals 
+horse,Jessica,5
+horse,Pigas,100
+camel,Gosha,9
+donkey,Oliver,1
+donkey,Asi,4
+
+┌──(naumov㉿kaliLinux)-[~]
+└─$ cat Pets packAnimals > animals                                                                                                                                                                                                                                                                                                                   
+┌──(naumov㉿kaliLinux)-[~]
+└─$ cat animals                   
+dog,Nala,1
+dog,Simba,2
+dog,Helty,1
+cat,Merss,7
+cat,Busya,6
+hamster,Sura,1
+horse,Jessica,5
+horse,Pigas,100
+camel,Gosha,9
+donkey,Oliver,1
+donkey,Asi,4
+
+┌──(naumov㉿kaliLinux)-[~]
+└─$ mv ./animals ./HumanFriends 
+
+┌──(naumov㉿kaliLinux)-[~]
+└─$ cat HumanFriends 
+dog,Nala,1
+dog,Simba,2
+dog,Helty,1
+cat,Merss,7
+cat,Busya,6
+hamster,Sura,1
+horse,Jessica,5
+horse,Pigas,100
+camel,Gosha,9
+donkey,Oliver,1
+donkey,Asi,4
+
+┌──(naumov㉿kaliLinux)-[~]
+└─$ mkdir ./animals            
+                                                                                                                                                                                                                                                                                                                           
+┌──(naumov㉿kaliLinux)-[~]
+└─$ mv ./HumanFriends ./animals 
+
+┌──(naumov㉿kaliLinux)-[~]
+└─$ la -al ./animals                 
+итого 12
+drwxr-xr-x  2 naumov naumov 4096 июл 25 00:12 .
+drwx------ 25 naumov naumov 4096 июл 25 00:12 ..
+-rw-r--r--  1 naumov naumov  149 июл 25 00:03 HumanFriends
+ 
+ ┌──(naumov㉿kaliLinux)-[~]
+└─$  wget https://dev.mysql.com/get/mysql-apt-config_0.8.26-1_all.deb
+--2023-07-25 00:29:41--  https://dev.mysql.com/get/mysql-apt-config_0.8.26-1_all.deb
+Распознаётся dev.mysql.com (dev.mysql.com)… 23.13.40.241, 2a02:26f0:9500:b91::2e31, 2a02:26f0:9500:b80::2e31
+Подключение к dev.mysql.com (dev.mysql.com)|23.13.40.241|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 302 Moved Temporarily
+Адрес: https://repo.mysql.com//mysql-apt-config_0.8.26-1_all.deb [переход]
+--2023-07-25 00:29:42--  https://repo.mysql.com//mysql-apt-config_0.8.26-1_all.deb
+Распознаётся repo.mysql.com (repo.mysql.com)… 184.30.24.227
+Подключение к repo.mysql.com (repo.mysql.com)|184.30.24.227|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+Длина: 18088 (18K) [application/x-debian-package]
+Сохранение в: «mysql-apt-config_0.8.26-1_all.deb»
+
+mysql-apt-config_0.8.26-1_all.deb                                              100%[===================================================================================================================================================================================================>]  17,66K  --.-KB/s    за 0,001s  
+
+2023-07-25 00:29:43 (15,4 MB/s) - «mysql-apt-config_0.8.26-1_all.deb» сохранён [18088/18088]
+
+┌──(naumov㉿kaliLinux)-[~]
+└─$ sudo dpkg -i mysql-apt-config_0.8.26-1_all.deb
+[sudo] пароль для naumov: 
+Выбор ранее не выбранного пакета mysql-apt-config.
+(Чтение базы данных … на данный момент установлено 430013 файлов и каталогов.)
+Подготовка к распаковке mysql-apt-config_0.8.26-1_all.deb …
+Распаковывается mysql-apt-config (0.8.26-1) …
+Настраивается пакет mysql-apt-config (0.8.26-1) …
+Unsupported distribution kali
+To manually select package repository, please run dpkg-reconfigure mysql-apt-config
+
